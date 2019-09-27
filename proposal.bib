@@ -64,3 +64,157 @@
 	publisher = {IEEE Computer Society},
 	address = {Los Alamitos},
 }
+
+@InProceedings{Cottam2015,
+  abstract = {Visualization  schemas need  to be  enhanced  to support  next-generation  high-performance computing  (HPC)  environments. New HPC runtimes perform more actions in a unit of time, but they also perform a wider variety of actions. Existing schemas are too simple to illustrate the variety of information that HPC developers need. However, existing schemas can be extended in simple ways to become more effective for next-generation HPC environments.  This  paper  presents  extensions  to  the  common Vampir style plot that use high-definition alpha composition and color weaving. These two techniques incorporate new detail into the traditional plot style, providing useful information for HPC developers.},
+  author = {Cottam, Joseph and Martin, Ben and Dalessandro, Luke and Lumsdaine, Andrew},
+  booktitle = {Proceedings of the 3rd IEEE Working Conference on Software Visualization},
+  keywords = {type: research, context: tasks, subcontext: tasks, vis: HD alpha composition, vis: color weaving, vis: Gantt, vis: timelines},
+  month = {sep},
+  series = {VISSOFT},
+  title = {Pixel-Oriented Techniques for Visualizing Next-Generation HPC Systems},
+  year = {2015}
+}
+
+
+
+@article{nagel1996vampir,
+  title={VAMPIR: Visualization and analysis of MPI resources},
+  author={Nagel, Wolfgang E and Arnold, Alfred and Weber, Michael and Hoppe, Hans-Christian and Solchenbach, Karl},
+  year={1996},
+  journal={Supercomputer},
+  publisher={Citeseer}
+}
+
+@article{leblanc1990analyzing,
+  title={Analyzing parallel program executions using multiple views},
+  author={LeBlanc, Thomas J and Mellor-Crummey, John M and Fowler, Robert J},
+  journal={Journal of Parallel and Distributed Computing},
+  volume={9},
+  number={2},
+  pages={203--217},
+  year={1990},
+  publisher={Elsevier}
+}
+
+@inproceedings{isaacs2014state,
+  title={State of the Art of Performance Visualization.},
+  author={Isaacs, Katherine E and Gim{\'e}nez, Alfredo and Jusufi, Ilir and Gamblin, Todd and Bhatele, Abhinav and Schulz, Martin and Hamann, Bernd and Bremer, Peer-Timo},
+  booktitle={EuroVis (STARs)},
+  year={2014}
+}
+
+@article{isaacs2014combing,
+  title={Combing the communication hairball: Visualizing parallel execution traces using logical time},
+  author={Isaacs, Katherine E and Bremer, Peer-Timo and Jusufi, Ilir and Gamblin, Todd and Bhatele, Abhinav and Schulz, Martin and Hamann, Bernd},
+  journal={IEEE transactions on visualization and computer graphics},
+  volume={20},
+  number={12},
+  pages={2349--2358},
+  year={2014},
+  publisher={IEEE}
+}
+
+@article{Adhianto2009,
+author = {Adhianto, L. and Banerjee, S. and Fagan, M. and Krentel, M. and Marin, G. and Mellor-Crummey, J. and Tallent, N. R.},
+doi = {10.1002/cpe.1553},
+issn = {15320626},
+journal = {Concurrency and Computation: Practice and Experience},
+keywords = {binary analysis,call path profiling,execution monitoring,performance tools,tracing},
+month = {apr},
+number = {6},
+pages = {n/a--n/a},
+publisher = {John Wiley {\&} Sons, Ltd},
+title = {{HPCTOOLKIT: tools for performance analysis of optimized parallel programs}},
+url = {http://doi.wiley.com/10.1002/cpe.1553},
+volume = {22},
+year = {2009}
+}
+
+@misc{Intel2019,
+abstract = {This tutorial demonstrates a basic workflow of analyzing an MPI application, which you can ultimately apply this workflow to your own applications.
+
+To improve performance of some complex applications, it is necessary to analyze their cross-process behavior as well as their single process performance. Intel{\textregistered} Trace Analyzer and Collector enables you to analyze communications between processes, while Intel{\textregistered} VTune™ Amplifier XE helps you find single process performance issues.},
+author = {Intel},
+booktitle = {Intel Developer Zone},
+title = {{Tutorial: Analyzing MPI Applications with Intel{\textregistered} Trace Analyzer and Intel{\textregistered} VTune™ Amplifier XE | Intel{\textregistered} Software}},
+url = {https://software.intel.com/en-us/analyzing-mpi-apps-with-itac-and-vtune},
+urldate = {2019-09-25},
+year = {2019}
+}
+
+
+@article{Leblanc1990,
+abstract = {To understand a parallel program's execution we must be able to analyze lots of information describing complex relationships among many processes. Various techniques have been used, from program replay to program animation, but each has limited applicability and the lack of a common foundation precludes an integrated solution. Our approach to parallel program analysis is based on a multiplicity of views of an execution. We use a synchronization trace captured during execution to construct a graph representation of the program's behavior. A user manipulates this representation to create and fine-tune visualizations using an integrated, programmable toolkit. Additional execution details can be recovered as needed using program replay to reconstruct an execution from an existing synchronization trace. We present a framework for describing views of a parallel program's execution, and an analysis methodology that relates a sequence of views to the program development cycle. We then describe our toolkit implementation and explain how users construct visualizations using the toolkit. Finally, we present an extended example to illustrate both our methodology and the power of our programmable toolkit.},
+author = {Leblanc, Thomas J. and Mellor-Crummey, John M. and Fowler, Robert J.},
+doi = {10.1016/0743-7315(90)90046-R},
+file = {:C$\backslash$:/Users/amile/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Leblanc, Mellor-Crummey, Fowler - 1990 - Analyzing parallel program executions using multiple views(2).pdf:pdf},
+issn = {0743-7315},
+journal = {Journal of Parallel and Distributed Computing},
+month = {jun},
+number = {2},
+pages = {203--217},
+publisher = {Academic Press},
+title = {{Analyzing parallel program executions using multiple views}},
+url = {https://www.sciencedirect.com/science/article/pii/074373159090046R},
+volume = {9},
+year = {1990}
+}
+
+@inproceedings{Adhianto2016HPCToolkit,
+  abstract = {Analysis and optimization of long-running applications on large-scale parallel systems is important to avoid unacceptable inefficiencies. Tracing is one of the most popular techniques for understanding the performance of parallel programs. Since tracing captures data in the time dimension, the size of a trace is linearly proportional to execution time. For that reason, traces of long-running executions of parallel programs may contain gigabytes or even terabytes of data. Presenting huge traces in a scalable fashion and identifying performance bottlenecks hidden in an ocean of data are challenging problems. To pinpoint performance bottlenecks effectively, a performance visualization tool needs to be relatively responsive and scalable. It also needs to be able to present both a global view of the performance of all threads and processes in a parallel execution, and a local view to see the full detail of a trace for an individual thread or process. Our approach to address this challenge is to use a client-server approach for trace visualization in hpctraceviewer, which is part of the HPCTOOLKIT performance tools. This paper demonstrates the utility of our tool for identifying performance bottlenecks in large-scale executions through case studies with two Department of Energy procurement benchmarks: Algebraic Multi Grid (AMG) and Unstructured Mesh Transport (UMT) codes. Finally, the experiment shows that our implementation is scalable, rendering views of huge traces stored on remote supercomputers in a few seconds.},
+  author = {Adhianto, Laksono and Taffet, Philip},
+  booktitle = {45th International Conference on Parallel Processing Workshops},
+  keywords = {type: research, context: tasks, subcontext: trace, vis: timelines, vis: client-server, parallel scale: 10k},
+  pages = {319--328},
+  series = {ICCPW},
+  title = {Addressing Challenges in Visualizing Huge Call-Path Traces},
+  year = {2016}
+}
+
+@article{Tallent2011,
+abstract = {Applications must scale well to make efficient use of even medium-scale parallel systems. Because scaling problems are often difficult to diagnose, there is a critical need for scalable tools that guide scientists to the root causes of per-formance bottlenecks. Although tracing is a powerful performance-analysis tech-nique, tools that employ it can quickly become bottlenecks themselves. Moreover, to obtain actionable performance feedback for modular parallel software systems, it is of-ten necessary to collect and present fine-grained context-sensitive data — the very thing scalable tools avoid. While existing tracing tools can collect calling contexts, they do so only in a coarse-grained fashion; and no prior tool scalably presents both context-and time-sensitive data. This paper describes how to collect, analyze and present fine-grained call path traces for parallel programs. To scale our measurements, we use asynchronous sampling, whose granularity is controlled by a sampling frequency, and a com-pact representation. To present traces at multiple levels of abstraction and at arbitrary resolutions, we use sampling to render complementary slices of calling-context-sensitive trace data. Because our techniques are general, they can be used on applications that use different parallel programming models (MPI, OpenMP, PGAS). This work is implemented in HPCToolkit.},
+author = {Tallent, Nathan R. and Mellor-Crummey, John and Franco, Michael and Landrum, Reed and Adhianto, Laksono},
+doi = {10.1145/1995896.1995908},
+file = {:C$\backslash$:/Users/amile/Downloads/ics-2011-hpctoolkit-scalable-tracing.pdf:pdf},
+isbn = {9781450301022},
+journal = {Proceedings of the International Conference on Supercomputing},
+keywords = {calling context,hpctoolkit,performance tools,statistical sampling,tracing},
+pages = {63--74},
+title = {{Scalable fine-grained call path tracing}},
+year = {2011}
+}
+
+@inproceedings{Brendel2016,
+  abstract = {To fully exploit the potential of today’s computers, application developers need to design for concurrency. Along with parallel execution new performance problems emerge. Developers gain insight into application behavior by visualizing inter-process communication in timelines. They use this insight to eliminate performance bottlenecks. Timeline visualizations overlay function call structure with communication information and additional performance data. In many cases such visualizations suffer from information overload and visual clutter that complicate analysis. We address these problems by introducing techniques inspired by hierarchical edge bundling into time-based communication visualization. Our visualization combines individual messages into dominant communication paths and thereby highlights higher-level structures. Furthermore, we introduce scalable visualizations for communication profiles, which offer an alternative view on communication patterns. This work employs edge bundling at unprecedented scale to address emerging problems in timeline displays.},
+  author = {Brendel, Ronny and Heyde, Michael and Brunst, Holger and Hilbrich, Tobias and Weber, Matthias},
+  booktitle = {Proceedings of the Third International Workshop on Visual Performance Analysis},
+  keywords = {type: research, context: tasks, subcontext: trace, vis: edge bundling, vis: Gantt, vis: timelines},
+  pages = {1--8},
+  series = {VPA},
+  title = {Edge bundling for visualizing communication behavior},
+  year = {2016}
+}
+
+@article{Sambasivan2013,
+author = {Sambasivan, Raja R. and Shafer, Ilari and Mazurek, Michelle L. and Ganger, Gregory R.},
+doi = {10.1109/TVCG.2013.233},
+issn = {1077-2626},
+journal = {IEEE Transactions on Visualization and Computer Graphics},
+month = {dec},
+number = {12},
+pages = {2466--2475},
+title = {{Visualizing Request-Flow Comparison to Aid Performance Diagnosis in Distributed Systems}},
+url = {http://ieeexplore.ieee.org/document/6634197/},
+volume = {19},
+year = {2013}
+}
+
+@misc{top500,
+booktitle = {Top 500},
+title = {{Lists | TOP500 Supercomputer Sites - November 1995}},
+author = {Top 500},
+url = {https://www.top500.org/lists/1995/11/},
+urldate = {2019-09-27},
+year = {1995}
+}

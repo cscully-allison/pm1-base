@@ -2,42 +2,24 @@
 \section{Background}
 \label{sec:background}
 
-Expand on what the reader needs to know and understand if it necessary to
-adequately describe the problem. This may include definitions of terms and
-explanations of the present workflow people use to solve the task.
+This research applies significantly to high performance computing (HPC), so to understand it some understanding of HPC concepts are necessary. First is the concept of profiling. Profiling generally describes the process of measuring a program's execution using various metrics like runtime and memory usage. This information is used to optimize a program and is crucial to understanding the complex and large programs developed to run on distributed systems and supercomputers.
 
-This section should answer the question "What does someone unfamiliar with the
-area need to know to understand this project?" Often times this section
-focuses on the \textit{domain}. For example, a new visualization for biology
-data will explain the type of biology data used, the terminology that will be
-used to describe it, the people who use it, and what they hope to learn from
-it. If there is no specific domain, the background section may describe
-general terms about the data abstraction (e.g. "We define a graph $G = (V, E)$
-as..."), common practices, or other information for visualization researchers
-who are not as familiar with this problem in comparison to all the others. 
+When profiling parallel programs there are many characteristics which experts examine. Among them, communication between processes is one of the most important. This communication is often abstracted as "messages" passed between programs conveying state information or containing data. Because supercomputers commonly do not share memory this data must be transferred between CPU's using physical buses or network connections. The most common library used for this process is called "Message Passing Interface" or MPI. The time taken to transfer this data is called "overhead" and describes a common phenomenon that causes slowdown with parallel programs.
+
+
+A Gantt chart describes a special variety of chart which plots tasks along a timeline with bars. The x axis commonly denotes time in these charts and the y axis usually denotes a category. In HPC, each bar denotes a particular process or processor running a portion of parallel code. This bar can be subdivided into sections that denote function calls or execution states. Straight lines indicate passed messages between processes and connect bars at various points. An example of a typical Gantt chart can be seen in Figure \ref{fig:simple_gantt}.
+
 
 % 5 pts
 \subsection{Related Work}
 \label{sec:related}
+Gantt charts have been used as a key visualization method in HPC profiling software for many years. Introduced as a "timeline" view by VAMPIR in 1996, many other platforms adapted the design they presented to visualize execution traces \cite{nagel1996vampir}.  Notably, Intel provides a "Intel Trace Analyzer" software which uses a nearly identical layout to VAMPIR\cite{Intel2019}. HPCToolkit similarly provides a Gantt chart view tracing the execution of various processes over time, however they omit the lines denoting message passing between processes\cite{Adhianto2009}.
 
-Discuss the work related to your project---include both visualization and
-domain-specific references to the problem you're trying to solve. Prominent
-related works should be included for this milestone. If you are proposing a
-literature review or task taxonomy, this section must include a discussion of
-what similar ones exist already and should tie into the motivation. Is the
-existing one old enough to be missing many relevant advances?
+As is implied by HPCToolkit, the use of connecting lines to denote passed messages is not universal. However it can provide critical contextual information which aids researchers looking for bottlenecks. This approach was notably introduced as a means to give programmers insight into the structure of communication between threads and cores\cite{Leblanc1990}. At small scales this insight can be highly informative as to how communication overhead may impact the efficiency of parallel programs. 
 
-For example, if my project involves analyzing perfromance data of distributed
-systems, I might want to cite Perfopticon~\cite{Moritz:2015:EuroVis}. If my
-project involves designing a new library to support creating new
-visualizations, I might want to cite d3js~\cite{d3js}. Note here I am using
-keys such as "Moritz:2015:EuroVis" for citations. These refer to the full
-definitions in proposal.bib.
+The concept of developing a Gantt chart for the modern era of HPC is not a new one. Acknowledging the failure of traditional techniques for HPC profiling and visualization, there has been continual effort to improve the general layout of Gantt charts to provide more meaningful information \cite{Cottam2015, Adhianto2016HPCToolkit, Tallent2011}. Although impactful, much of this work is generally focused on an improvement of scaling process bars in timelines and coding more information into those bars. 
 
-ACM Digital Library makes it easy to get bib files for proposal.bib and there
-are guides online for citing things like books~\cite{ware:2004:IVP},
-theses~\cite{levoy:1989:DSV}, journal articles~\cite{Lorensen:1987:MCA}, and
-conference proceedings~\cite{Nielson:1991:TAD}. There's even a format for
-miscellaneous references (misc) such as websites and libraries not associated
-with a article.
+More specific to the subject of this paper, there does exist some work which attempts to preserve the message passing information encoded with lines at modern scales. Researchers in Germany have attempted integrate a commonly found graph visualization technique called "edge bundling" into Gantt charts to reduce visual clutter of these connecting lines \cite{Brendel2016}. There has also been research which seeks to mitigate noise caused by unnecessary edge crossings in physical timelines by converting them to logical time\cite{isaacs2014combing}. These approaches have had success in simplifying visualizations but can still obscure other information in their charts and suffer from scaling issues as more and more processes are added. 
+
+Despite being widely used in HPC profiling, there exists very little work evaluating Gantt charts' effectiveness with empirical, user-study based research. The closest work in recent years, which provides a good model for this sort of evaluation comes from Sambasivan et al \cite{Sambasivan2013}. This work on request flow comparisons provides us with some insight into how best to design a study in this domain and some metrics to consider for evaluation.
 
